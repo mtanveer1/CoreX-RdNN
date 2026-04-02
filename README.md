@@ -1,68 +1,56 @@
-# CoreX-RdNN: A Unified Framework for Stable, Balanced, and Structured Shallow &amp; Deep Ensemble Randomized Learning
-
-
-
-Please cite the following paper if you are using this code.
-
-Reference: M. Sajid, A. K. Malik and M. Tanveer, "CoreX-RdNN: A Unified Framework for Stable, Balanced, and Structured Shallow & Deep Ensemble Randomized Learning," in Pattern Recognition (revision).
-
-
+# CoreX-RdNN: A Unified Framework for Stable, Balanced, and Structured Shallow and Deep Ensemble Randomized Learning
 
 ## 📌 Notes and Acknowledgment
 
 Please cite the related foundational works if you use this code or build upon the underlying methodologies.
 
+Reference: A. Rahaman, M. Sajid, and M. Tanveer, "CoreX-RdNN: A Unified Framework for Stable, Balanced, and Structured Shallow and Deep Ensemble Randomized Learning", in Pattern Recognition (under revision).
 ---
 
 ### 🧪 Demo and Configuration
 
 A demonstration of the proposed **CoreX-RdNN framework** can be executed using the provided scripts on benchmark datasets.
 
-Typical parameter settings used in experiments:
+Demo parameter settings used:
 
 ```
 C = 1e-5        # Regularization parameter
 N = 103         # Number of enhancement nodes
 activation = 6  # Activation function index
-lambda_ = 0.01  # Regularization control (variant-specific)
-gamma_ = 0      # Structural parameter (variant-specific)
+lambda_ = 0.01  # Regularization control 
+gamma_ = 0      # Structural parameter 
 thd = -1        # Correlation threshold
 ```
-
 ---
 
 ### 📂 Description of Files
 
 - `run_corex_rvfl.py`  
-  Main script for running the CoreX-RVFL (full framework), including correlation-aware feature selection and structured learning.
+  Main script for running the CoreX-RVFL.
 
 - `run_corex_rvfl_b.py`  
-  Implements the balanced variant for multi-class classification.
+  Implements the CoreX-RVFL-B.
 
 - `run_corex_rvfl_g.py`  
-  Implements the regularized variant using λ-based control.
+  Implements the CoreX-RVFL-G.
 
 - `run_corex_rvfl_s.py`  
-  Implements the structured variant using γ-based constraints.
+  Implements the CoreX-RVFL-S.
 
 - `models/`  
-  Contains the core implementation of RVFL-based learning modules.
+  Contains the core implementation of proposed models.
 
 - `datasets/`  
   Directory for input datasets in `.mat` format.
 
 - `results/`  
-  Stores experimental outputs including accuracy and timing metrics.
+  Stores experimental outputs.
 
 ---
 
 ### ⚠️ Important Notes
 
 - The codes are designed for clarity and reproducibility, not optimized for computational efficiency.  
-- Preprocessing steps include:
-  - Standardization using `StandardScaler`
-  - Conversion of labels (e.g., `-1 → 0` in certain cases)
-- Feature selection is performed using correlation-based filtering controlled by the threshold parameter (`thd`).
 - Results may slightly vary due to randomness in feature initialization.
 
 ---
